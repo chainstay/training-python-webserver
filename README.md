@@ -1,2 +1,4 @@
-# training-python-webserver
-This training walks a new programmer through the creation of a local Python Web Server
+# Run a Website on your Laptop
+
+{% page-ref page="beginner.md" %}
+
