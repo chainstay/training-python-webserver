@@ -4,21 +4,26 @@ from asciimatics.scene import Scene
 from asciimatics.screen import Screen
 from asciimatics.exceptions import StopApplication
 
-def demo(screen):
+def welcome_screen(screen):
+    # create `effects` that asciimatics will display in the screen
     effects = [
+        # main title
         Cycle(
             screen,
             FigletText("HackHer413", font='univers'),
             int(screen.height / 3 - 2)),
+        # subtitle
         Cycle(
             screen,
             FigletText("I beelong", font='o8'),
             int(screen.height / 2)),
+        # exit prompt
         Cycle(
             screen,
             FigletText("PRESS ANY KEY TO EXIT", font='digital'),
             int((screen.height / 2) * 1.5)),
         Stars(screen, 200),
+        # allow exiting with a keypress
         StopOnKeypress(screen),
     ]
     screen.play(
@@ -29,7 +34,7 @@ def demo(screen):
 class StopOnKeypress(Effect):
     """
     Include this effect to allow the visualization to be stopped on any
-    keypress
+    keypress, except for modifiers like `shift` and `ctl`
     """
     def _update(*args, **kwargs):
         pass
@@ -51,8 +56,9 @@ class StopOnKeypress(Effect):
 
 def main():
     try:
-        Screen.wrapper(demo)
-    except KeyboardInterrupt:  # Silence error reporting on cancellation
+        # create ascii screen and show on terminal
+        Screen.wrapper(welcome_screen)
+    except KeyboardInterrupt:  # silence error reporting on cancellation
         pass
     print('\n\n')
     print('  AAA                                                     ')
@@ -64,6 +70,7 @@ def main():
     print('\n\n')
     print('Well done! You are ready to start running some Python code!')
     print('\n')
+
 
 if __name__ == '__main__':
     main()

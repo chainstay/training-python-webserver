@@ -1,10 +1,10 @@
 ---
-description: 'If you have never written code for the web, you''re in the right place!'
+description: 'If you're in doubt, start here!'
 ---
 
-# Start Here
+# Let's define our terms
 
-## Getting Super Powers
+## What even is the Internet?
 
 Becoming a super hero is a fairly straight forward process:
 
